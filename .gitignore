@@ -1,6 +1,7 @@
 # Adding additional files
 Practice.ipynb
-Mission_to_Mars (1).py
+Mission_to_Mars.py
+Mission_to_Mars.ipynb
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

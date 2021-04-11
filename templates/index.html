@@ -8,46 +8,93 @@
     <link rel="stylesheet" 
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
-<body>
-    <div class="container">
+<body style="background-color: rgb(17, 8, 17);">
+    <div class="container-fluid">
       <!-- Add Jumpotron to Header -->
       <div class="jumbotron text-center">
-        <h1>Mission to Mars</h1>
+        <h1 style="color: white;">Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href="/scrape"
+        <p><a class="btn btn-primary btn-lg" style="background-color: rgb(19, 16, 14);" href="/scrape"
                     role="button">Scrape New Data</a></p>
       </div>
       <!-- Add section for Mars News -->
-      <div class="row" id="mars-news">
+      <div class="container-fluid row" id="mars-news">
         <div class="col-md-12">
           <div class="media">
-            <div class="media-body">
+            <div class="media-body" style="color: white;">
               <h2>Latest Mars News</h2>
-              <h4>class="media-heading">{{ mars.news_title }}</h4>
+              <h4 class="media-heading">{{ mars.news_title }}</h4>
               <p>{{ mars.news_paragraph }}</p>
             </div>
           </div>
         </div>
       </div>
       <!-- Section for Featured Image and Facts Table -->
-      <div class="row" id="mars-featured-image">
-        <div class="col-md-8">
+      <div class="container-fluid row" id="mars-featured-image">
+        <div class="col-md-8" style="color: white;">
           <h2>Featured Mars Image</h2>
+          <br>
           <img
             src="{{ mars.featured_image }}"
             class="img-responsive"
             alt="Responsive image"
           />
+          <br>
         </div>
-        <div class="col-md-4">
-          <!-- Mars Facts-->
-          <div class="row" id="mars-facts">
-            <h4>Mars Facts</h4>
-            {{ mars.facts | safe }}
+        <br>
+        <br>
+        <div class="container-fluid col-md-4">
+          <!-- Mars Facts -->
+          <div class="panel panel-default">
+            <div class"panel-heading" style="color: white;">
+              <h2 class="panel-title text-center" style="background-color: black;">Mars Facts</h2>
+             </div>
+             <div class="panel-body" style="background-color: black; color: white;">
+              <table>
+                {{ mars.facts | safe }}
+              </table>
+            </div>
           </div>
+          
         </div>
-      </div>
+      <br>
+      <!-- Mars Hemispheres -->
+      <div class="container-fluid col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center" style="background-color: black;">
+                <h3 style="color:white;">Mars Hemispheres</h3>
+            </div>
+            <div class="panel-body" style="background-color: black;">
+                <div class="thumbnail" style="width: 50%; float:left;">
+                    <img src= {{ mars.hemisphere_image_urls[0].img_url }} alt="Hemisphere1">
+                    <div class="caption">
+                        <h4>{{ mars.hemisphere_image_urls[0]["title"] }}</h4>
+                    </div>
+                </div>
+                <div class="thumbnail" style="width: 50%; float:left;">
+                    <img src= {{ mars.hemisphere_image_urls[1].img_url }} alt="Hemisphere2">
+                    <div class="caption">
+                        <h4>{{ mars.hemisphere_image_urls[1]["title"] }}</h4>
+                    </div>
+                </div>
+                <div class="thumbnail" style="width: 50%; float:left;">
+                    <img src= {{ mars.hemisphere_image_urls[2].img_url }} alt="Hemisphere3">
+                    <div class="caption">
+                        <h4>{{ mars.hemisphere_image_urls[2]["title"] }}</h4>
+                    </div>
+                </div>
+                <div class="thumbnail" style="width: 50%; float:left;">
+                    <img src= {{ mars.hemisphere_image_urls[3].img_url }} alt="Hemisphere4">
+                    <div class="caption">
+                        <h4>{{ mars.hemisphere_image_urls[3]["title"] }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+      </div> 
     </div>
 </body>
 </html>
