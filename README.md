@@ -1,5 +1,5 @@
 # Mission-to-Mars
-
+![](https://github.com/Ariannatopbjerg/Mission-to-Mars/blob/main/mission_to_mars.PNG)
 ## Web Application Purpose
 This web application is designed to visit different websites to extract data about the Mission to Mars. 
 
